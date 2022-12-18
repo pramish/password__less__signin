@@ -1,7 +1,11 @@
 import { Router } from "express";
 
 import { SignInController } from "../../controllers/auth/SignIn";
+import { SignUpController } from "../../controllers/auth/SignUp";
 
 export const AuthRouter = Router();
-// Auth SignIn
+// SignIn
 AuthRouter.post("/signin", SignInController);
+
+// SignUp
+AuthRouter.post("/signup", SignUpController);

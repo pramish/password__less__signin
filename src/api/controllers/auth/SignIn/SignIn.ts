@@ -56,7 +56,6 @@ export const SignInController: RequestHandler = async (
 
   return response.status(statusCode).json({
     message,
-    statusCode,
     isSuccess,
   });
 };
