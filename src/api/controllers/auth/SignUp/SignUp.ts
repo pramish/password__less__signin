@@ -41,7 +41,6 @@ export const SignUpController: RequestHandler = async (
 
   return response.status(statusCode).json({
     message,
-    statusCode,
     isSuccess,
   });
 };

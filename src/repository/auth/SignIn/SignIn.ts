@@ -46,7 +46,7 @@ export const SignInUser = async ({
     };
   }
 
-  Logger.error("Generating a User token.");
+  Logger.info("Generating a User token.");
   const userToken = sign(
     {
       userId: user._id,

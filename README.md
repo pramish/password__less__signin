@@ -10,8 +10,8 @@ Technology being used:
 
 List of APIs
 
-- `/auth/signup`: Creates a user with valid email address.
-- `/auth/signin`: Sign in user with valid email address and 6 digits verification code and returns a token.
-- `/users/lookup`: Check if user present and generates a 6 digits verification code.
+1. `/auth/signup`: Creates a user with valid email address.
+2. `/users/lookup`: Check if user present and generates a 6 digits verification code.
+3. `/auth/signin`: Sign in user with valid email address and 6 digits verification code and returns a token.
 
 Thanks!
