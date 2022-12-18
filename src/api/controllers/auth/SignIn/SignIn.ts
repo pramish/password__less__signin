@@ -49,7 +49,7 @@ export const SignInController: RequestHandler = async (
     });
   }
 
-  const { message, statusCode, isSuccess } = await authInstance.signIn({
+  const { message, statusCode, isSuccess, token } = await authInstance.signIn({
     email,
     verificationCode,
   });
@@ -57,5 +57,6 @@ export const SignInController: RequestHandler = async (
   return response.status(statusCode).json({
     message,
     isSuccess,
+    token,
   });
 };

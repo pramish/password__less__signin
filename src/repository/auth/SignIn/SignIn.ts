@@ -11,6 +11,7 @@ import { UpdateUser } from "../../user";
 import { CheckIfUserExistsEmail } from "../../user/CheckIfUserExistsEmail";
 import { checkIfTwoStringsAreEqual } from "../../../utils/checkIfTwoStringsAreEqual";
 import { calculateTimeStampFromDate } from "../../../utils/calculateTimeStampFromDate";
+import { ParseUserData } from "../../../utils/parseUserData";
 
 export const SignInUser = async ({
   email,
@@ -32,7 +33,7 @@ export const SignInUser = async ({
   }
 
   if (
-    checkIfTwoStringsAreEqual(
+    !checkIfTwoStringsAreEqual(
       verificationCode.toString(),
       user.verificationCode.toString()
     )
@@ -59,8 +60,10 @@ export const SignInUser = async ({
 
   Logger.info("Saving user token, verification timestamp.");
 
+  const parsedUserData = ParseUserData(user);
+
   const userDataToSave: IUser = {
-    ...user,
+    ...parsedUserData,
     token: userToken,
     verificationExpiryTimeStamp: calculateTimeStampFromDate({
       number: 6,
