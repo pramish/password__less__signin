@@ -8,6 +8,12 @@ Technology being used:
 - MongoDB
 - TypeScript
 
+# Required environment variables
+
+- PORT
+- DATABASE_URL
+- ENVIRONMENT
+
 List of APIs
 
 1. `/auth/signup`: Creates a user with valid email address.
