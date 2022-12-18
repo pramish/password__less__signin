@@ -1,1 +1,7 @@
-export type { IUser, IUserResponse } from "./User";
+export type {
+  IUser,
+  IUserResponse,
+  IUserLookUp,
+  IUserLookUpResponse,
+  IUserService,
+} from "./User";

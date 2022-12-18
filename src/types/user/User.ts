@@ -10,6 +10,17 @@ export interface IUser {
   verificationExpiryTimeStamp: number;
 }
 
+export interface IUserLookUp {
+  email: string;
+}
+export interface IUserLookUpResponse extends IResponse {
+  verificationCode?: number;
+}
+
 export interface IUserResponse extends IResponse {
   user?: IUser;
+}
+
+export interface IUserService {
+  userLookUp: ({ email }: IUserLookUp) => Promise<IUserLookUpResponse>;
 }
