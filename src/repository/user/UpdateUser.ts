@@ -11,7 +11,7 @@ export const UpdateUser = async (
   try {
     const { acknowledged } = await UserModel.updateOne(
       { email },
-      { userDataToSave }
+      userDataToSave
     );
 
     if (!acknowledged) {

@@ -3,6 +3,7 @@ import { StatusCode } from "../../constants/StatusCode";
 import { CheckIfUserExistsEmail, UpdateUser } from "../../repository/user";
 import { calculateTimeStampFromDate } from "../../utils/calculateTimeStampFromDate";
 import { generateVerificationCode } from "../../utils/generateVerificationCode";
+import { ParseUserData } from "../../utils/parseUserData";
 
 import {
   IUserService,
@@ -26,8 +27,10 @@ export class UserService implements IUserService {
 
     const verificationCode = generateVerificationCode();
 
+    const parsedUserData = ParseUserData(user);
+
     const userDataToUpdate: IUser = {
-      ...user,
+      ...parsedUserData,
       verificationCode,
       verificationCodeExpiryTimeStamp: calculateTimeStampFromDate({
         number: 6,
