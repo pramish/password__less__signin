@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import { SignInController } from "../../controllers/auth/SignIn";
+import { LookUpUser } from "../../controllers/user";
 
 export const UserRouter = Router();
 
 // User lookup
-UserRouter.post("/lookup", SignInController);
+UserRouter.post("/lookup", LookUpUser);

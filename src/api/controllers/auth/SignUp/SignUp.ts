@@ -1,20 +1,20 @@
 import { RequestHandler, Request, Response } from "express";
 
-import { Logger } from "../../../logger";
-import { userInstance } from "../../../services";
-import { IUserLookUp } from "../../../types/user";
-import { validateEmail } from "../../../utils/validation";
-import { StatusCode } from "../../../constants/StatusCode";
+import { Logger } from "../../../../logger";
+import { authInstance } from "../../../../services";
+import { ISignUp } from "../../../../types/auth/SignUp";
+import { validateEmail } from "../../../../utils/validation";
+import { StatusCode } from "../../../../constants/StatusCode";
 
-export const LookUpUser: RequestHandler = async (
+export const SignUpController: RequestHandler = async (
   request: Request,
   response: Response
 ) => {
   Logger.info("Getting a request params");
 
-  const userLookUpRequestBody: IUserLookUp = request.body;
+  const signUpRequestBody: ISignUp = request.body;
 
-  const { email } = userLookUpRequestBody;
+  const { email } = signUpRequestBody;
 
   if (!email) {
     Logger.error("Not all query parameters are passed.");
@@ -35,14 +35,13 @@ export const LookUpUser: RequestHandler = async (
     });
   }
 
-  const { message, statusCode, isSuccess, verificationCode } =
-    await userInstance.userLookUp({
-      email,
-    });
+  const { message, statusCode, isSuccess } = await authInstance.signUp({
+    email,
+  });
 
   return response.status(statusCode).json({
     message,
-    verificationCode,
+    statusCode,
     isSuccess,
   });
 };

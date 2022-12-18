@@ -4,7 +4,7 @@ import { Logger } from "../../logger";
 
 import { StatusCode } from "../../constants/StatusCode";
 
-import { IUserResponse } from "../../types/user";
+import { IUserResponse, IUser } from "../../types/user";
 
 export const CheckIfUserExistsEmail = async (
   email: string
