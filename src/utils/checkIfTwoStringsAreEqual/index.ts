@@ -1,0 +1,1 @@
+export { checkIfTwoStringsAreEqual } from "./checkIfTwoStringsAreEqual";

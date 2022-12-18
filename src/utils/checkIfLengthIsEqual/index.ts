@@ -1,0 +1,1 @@
+export {checkIfLengthIsEqual} from './checkIfLengthIsEqual'

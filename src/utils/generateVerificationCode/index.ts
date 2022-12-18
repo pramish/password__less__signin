@@ -1,0 +1,1 @@
+export { generateVerificationCode } from "./generateVerificationCode";
