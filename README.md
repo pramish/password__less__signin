@@ -1,6 +1,6 @@
 # Password Less Sign In
 
-This repository is used for Password Less Sign In.
+This repository is used for Password Less Sign In. `Please note this is a bare minimum requirements for password less sign in.`
 
 Technology being used:
 
