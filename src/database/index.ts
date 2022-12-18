@@ -1,0 +1,1 @@
+export { ConnectToMongo } from "./mongoDB";
