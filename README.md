@@ -8,4 +8,4 @@ Technology being used:
 - MongoDB
 - TypeScript
 
-Thanks!
+Thanks
